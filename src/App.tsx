@@ -1,8 +1,13 @@
 import "./App.css";
+import { MainCatTitle } from "./components/MainCatTitle";
+import { SearchHeader } from "./components/SearchHeader";
 
 function App() {
 
-  return <></>;
+  return <>
+  <MainCatTitle />
+  <SearchHeader />
+  </>;
 }
 
 export default App;

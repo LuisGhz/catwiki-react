@@ -1,21 +1,19 @@
+@import "../scss/ScreenBreakPoints.scss";
+
 .header {
   background-image: url("../assets/HeroImagelg.png");
-  margin-block-start: 1rem;
-  padding: 5rem 2.5rem 15rem 10rem;
-  border-radius: 5rem 5rem 0 0;
   background-position: center;
   background-size: cover;
-}
+  border-radius: 5rem 5rem 0 0;
+  margin-block-start: 1rem;
+  padding: 5rem 2.5rem 10rem 10rem;
 
-@media screen and (max-width: 1024px) {
-  .header {
+  @media screen and (max-width: 1024px) {
     background-image: url("../assets/HeroImagemd.png");
     padding: 1.6rem 2.5rem 4.5rem 4.5rem;
   }
-}
 
-@media screen and (max-width: 425px) {
-  .header {
+  @media screen and (max-width: 425px) {
     background-image: url("../assets/HeroImagesm.png");
     padding: 1.6rem 2.5rem 2.5rem 2.5rem;
   }
@@ -28,7 +26,15 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-block-end: .5rem;
+  margin-block-end: 0.5rem;
+
+  @include w768 {
+    font-size: 3.2rem;
+  }
+
+  @include w425 {
+    font-size: 1.8rem;
+  }
 }
 
 .header__text {
@@ -39,6 +45,16 @@
   font-weight: 500;
   line-height: normal;
   width: 30rem;
+
+  @include w768 {
+    font-size: 1.8rem;
+    width: 23rem;
+  }
+
+  @include w425 {
+    font-size: 1.2rem;
+    width: 15rem;
+  }
 }
 
 .search {
@@ -47,55 +63,32 @@
   min-width: 25rem;
   position: relative;
   width: 25%;
+
+  @include w425 {
+    display: none;
+  }
 }
 
 .search-mobile {
   background-color: white;
   border-radius: 4rem;
   display: none;
-}
 
-@media screen and (max-width: 1024px) {
-  .header__title {
-    font-size: 3.2rem;
-  }
-
-  .header__text {
-    font-size: 1.8rem;
-    width: 23rem;
-  }
-}
-
-@media screen and (max-width: 425px) {
-
-  .header__title {
-    font-size: 1.8rem;
-  }
-
-  .header__text {
-    font-size: 1.2rem;
-    width: 15rem;
-  }
-
-  .search {
-    display: none;
-  }
-
-  .search-mobile {
+  @include w425 {
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     width: 12rem;
-  }
 
-  .search-mobile__text {
-    color: #291507;
-    display: block;
-    font-family: Montserrat;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    .search-mobile__text {
+      color: #291507;
+      display: block;
+      font-family: Montserrat;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
   }
 }

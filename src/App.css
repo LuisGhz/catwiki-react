@@ -1,0 +1,13 @@
+.app {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 140rem;
+  padding-block-start: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    width: 95%;
+    padding-block-start: 1rem;
+  }
+}

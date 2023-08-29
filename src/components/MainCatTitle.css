@@ -1,0 +1,9 @@
+.main-cat-title {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-cat-title__img {
+  width: 8rem;
+  height: 5rem;
+}

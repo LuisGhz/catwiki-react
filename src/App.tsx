@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { MainCatTitle } from "./components/MainCatTitle";
 import { SearchHeader } from "./components/SearchHeader";
 

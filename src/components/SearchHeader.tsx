@@ -1,7 +1,7 @@
 import React from "react";
 import { SearchPortal } from "./SearchPortal";
 import { useGetBreeds } from "../hooks/useGetBreeds";
-import "./SearchHeader.css";
+import "./SearchHeader.scss";
 import { BreedSearcher } from "../models/BreedSearcher.model";
 import { Searcher } from "./Searcher";
 

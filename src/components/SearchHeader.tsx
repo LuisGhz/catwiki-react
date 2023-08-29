@@ -1,9 +1,9 @@
 import React from "react";
-import { SearchPortal } from "../SearchPortal";
-import { SearchMobile } from "./SearchMobile";
+import { SearchPortal } from "./SearchPortal";
 import { useGetBreeds } from "../hooks/useGetBreeds";
 import "./SearchHeader.css";
 import { BreedSearcher } from "../models/BreedSearcher.model";
+import { Searcher } from "./Searcher";
 
 export const SearchHeader = () => {
   const [isSearchMobileOpen, setIsSearchMobileOpen] = React.useState(false);
@@ -15,16 +15,18 @@ export const SearchHeader = () => {
 
   return (
     <>
-      <SearchPortal isSearchOpen={isSearchMobileOpen}>
-        <SearchMobile
-          setIsSearchMobileOpen={setIsSearchMobileOpen}
-          breeds={breeds}
-          onSelectBreed={onSelectBreed}
-        />
-      </SearchPortal>
+      <SearchPortal
+        isSearchOpen={isSearchMobileOpen}
+        breeds={breeds}
+        onSelectBreed={onSelectBreed}
+        setIsSearchMobileOpen={setIsSearchMobileOpen}
+      />
       <header className="header">
         <h2 className="header__title">CatWiki</h2>
         <p className="header__text">Get to know more about your cat breed</p>
+        <div className="search">
+          <Searcher breeds={breeds} onSelectBreed={onSelectBreed} />
+        </div>
         <div
           className="search-mobile"
           onClick={() => setIsSearchMobileOpen(true)}

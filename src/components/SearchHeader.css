@@ -1,11 +1,16 @@
 .header {
   background-image: url("../assets/HeroImagelg.png");
   margin-block-start: 1rem;
+  padding: 5rem 2.5rem 15rem 10rem;
+  border-radius: 5rem 5rem 0 0;
+  background-position: center;
+  background-size: cover;
 }
 
 @media screen and (max-width: 1024px) {
   .header {
     background-image: url("../assets/HeroImagemd.png");
+    padding: 1.6rem 2.5rem 4.5rem 4.5rem;
   }
 }
 
@@ -13,54 +18,84 @@
   .header {
     background-image: url("../assets/HeroImagesm.png");
     padding: 1.6rem 2.5rem 2.5rem 2.5rem;
-    border-radius: 5rem 5rem 0 0;
-    background-position: center;
-    background-size: cover;
   }
 }
 
 .header__title {
   color: #fff;
   font-family: Mystery Quest;
-  font-size: 1.8rem;
+  font-size: 6.4rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-block-end: .5rem;
 }
 
 .header__text {
   color: #fff;
   font-family: Montserrat;
-  font-size: 1.2rem;
+  font-size: 2.4rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  width: 15rem;
+  width: 30rem;
+}
+
+.search {
+  background: white;
+  border-radius: 2rem;
+  min-width: 25rem;
+  position: relative;
+  width: 25%;
 }
 
 .search-mobile {
   background-color: white;
-  display: flex;
   border-radius: 4rem;
   display: none;
 }
 
+@media screen and (max-width: 1024px) {
+  .header__title {
+    font-size: 3.2rem;
+  }
+
+  .header__text {
+    font-size: 1.8rem;
+    width: 23rem;
+  }
+}
+
 @media screen and (max-width: 425px) {
+
+  .header__title {
+    font-size: 1.8rem;
+  }
+
+  .header__text {
+    font-size: 1.2rem;
+    width: 15rem;
+  }
+
+  .search {
+    display: none;
+  }
+
   .search-mobile {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
     padding: 1rem 1.5rem;
-    width: 40%;
+    width: 12rem;
   }
 
   .search-mobile__text {
     color: #291507;
+    display: block;
     font-family: Montserrat;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    display: block;
   }
 }

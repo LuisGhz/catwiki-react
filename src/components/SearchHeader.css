@@ -38,25 +38,23 @@
   width: 15rem;
 }
 
-.search {
+.search-mobile {
   background-color: white;
   display: flex;
   border-radius: 4rem;
-}
-
-.search__mobile-text {
   display: none;
 }
 
 @media screen and (max-width: 425px) {
-  .search {
+  .search-mobile {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     width: 40%;
   }
 
-  .search__mobile-text {
+  .search-mobile__text {
     color: #291507;
     font-family: Montserrat;
     font-size: 1.5rem;
@@ -64,9 +62,5 @@
     font-weight: 500;
     line-height: normal;
     display: block;
-  }
-
-  .search__input {
-    display: none;
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { createPortal } from "react-dom";
 import { BreedSearcher } from "../models/BreedSearcher.model";
 import { Searcher } from "./Searcher";
-import "./SearchPortal.css";
+import "./SearchPortal.scss";
 
 type SearchPortalProps = {
   isSearchOpen: boolean;

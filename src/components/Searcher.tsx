@@ -1,6 +1,6 @@
 import React from "react";
 import { BreedSearcher } from "../models/BreedSearcher.model";
-import "./Searcher.css";
+import "./Searcher.scss";
 
 type SearcherProps = {
   breeds: BreedSearcher[] | undefined;

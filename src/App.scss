@@ -3,10 +3,8 @@
   width: 90%;
   max-width: 140rem;
   padding-block-start: 2rem;
-}
 
-@media screen and (max-width: 768px) {
-  .app {
+  @media screen and (max-width: 768px) {
     width: 95%;
     padding-block-start: 1rem;
   }

@@ -1,5 +1,5 @@
 import Cat from '../assets/cat.png';
-import './MainCatTitle.css'
+import './MainCatTitle.scss'
 
 export const MainCatTitle = () => {
   return (

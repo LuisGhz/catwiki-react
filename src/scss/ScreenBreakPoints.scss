@@ -1,0 +1,11 @@
+@mixin w768 {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin w425 {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}

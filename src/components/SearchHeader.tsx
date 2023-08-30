@@ -4,7 +4,7 @@ import { useGetBreeds } from "../hooks/useGetBreeds";
 import "./SearchHeader.scss";
 import { BreedSearcher } from "../models/BreedSearcher.model";
 import { Searcher } from "./Searcher";
-import { RandomCats } from "./RandomCats";
+import { RandomBreeds } from "./RandomBreeds";
 
 export const SearchHeader = () => {
   const [isSearchMobileOpen, setIsSearchMobileOpen] = React.useState(false);
@@ -38,7 +38,7 @@ export const SearchHeader = () => {
           </span>
         </div>
       </header>
-      <RandomCats />
+      <RandomBreeds />
     </>
   );
 };

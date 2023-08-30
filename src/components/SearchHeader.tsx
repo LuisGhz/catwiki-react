@@ -2,7 +2,6 @@ import React from "react";
 import { SearchPortal } from "./SearchPortal";
 import { useGetBreeds } from "../hooks/useGetBreeds";
 import "./SearchHeader.scss";
-import { BreedSearcher } from "../models/BreedSearcher.model";
 import { Searcher } from "./Searcher";
 import { RandomBreeds } from "./RandomBreeds";
 

@@ -1,15 +1,11 @@
 import "./App.scss";
 import { Footer } from "./components/Footer";
-import { MainCatTitle } from "./components/MainCatTitle";
-import { SearchHeader } from "./components/SearchHeader";
-import { WhyToHaveACat } from "./components/WhyToHaveACat";
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <div className="app">
-      <MainCatTitle />
-      <SearchHeader />
-      <WhyToHaveACat />
+      <Outlet />
       <Footer />
     </div>
   );

@@ -1,0 +1,88 @@
+@import "../scss/ScreenBreakPoints.scss";
+
+.breed-detail {
+  margin-block-end: 6rem;
+
+  @include w425 {
+    margin-block-end: 4rem;
+  }
+  
+  .bred-detail__flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include w425 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .breed-detail__img {
+    aspect-ratio: 1 / 1;
+    border-radius: 3rem;
+    margin: 4rem auto 0 auto;
+    object-fit: cover;
+    width: 30rem;
+
+    @include w425 {
+      margin: 0 auto;
+    }
+  }
+
+  .breed-detail__name {
+    color: #291507;
+    font-family: Montserrat;
+    font-size: 3.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .breed-detail__description {
+    color: #291507;
+    font-family: Montserrat;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .breed-detail__feat {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    .bold {
+      font-weight: 700;
+    }
+  }
+
+  .other-photos__title {
+    color: #291507;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+
+    @include w425 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .gallery__img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+}

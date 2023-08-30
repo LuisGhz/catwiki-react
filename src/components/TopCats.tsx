@@ -12,7 +12,7 @@ export const TopCats = () => {
     <section className="top-cats">
       <div className="top-cats__container">
         <h3 className="top-cats__title">Most searched Breeds</h3>
-        <hr className="top-cats__hr" />
+        <hr className="hr-separator" />
         <div className="see-more">
           <p className="see-more__desc">66+ Breeds For you to discover</p>
           <p className="see-more__link" onClick={() => {

@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
-import { MainCatTitle } from "./components/MainCatTitle.tsx";
 import { SearchHeader } from "./components/SearchHeader.tsx";
 import { WhyToHaveACat } from "./components/WhyToHaveACat.tsx";
 import { TopBreeds } from "./components/TopBreeds.tsx";
+import { BreedDetail } from "./components/BreedDetail.tsx";
 
 const BrowserRouter = createBrowserRouter([
   {
@@ -17,7 +17,6 @@ const BrowserRouter = createBrowserRouter([
         path: "",
         element: (
           <>
-            <MainCatTitle />
             <SearchHeader />
             <WhyToHaveACat />
           </>
@@ -26,6 +25,10 @@ const BrowserRouter = createBrowserRouter([
       {
         path: "top",
         element: <TopBreeds />,
+      },
+      {
+        path: "breed/:id",
+        element: <BreedDetail />,
       },
     ],
   },

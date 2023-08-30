@@ -7,22 +7,15 @@ import "./SearchPortal.scss";
 type SearchPortalProps = {
   isSearchOpen: boolean;
   breeds: BreedSearcher[] | undefined;
-  onSelectBreed: (breed: BreedSearcher) => void;
   setIsSearchMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const SearchPortal = ({
   isSearchOpen,
   breeds,
-  onSelectBreed,
   setIsSearchMobileOpen,
 }: SearchPortalProps) => {
   if (!isSearchOpen) return null;
-
-  const searchBreedsFromMobile = (breed: BreedSearcher) => {
-    onSelectBreed(breed);
-    setIsSearchMobileOpen(false);
-  };
 
   return createPortal(
     <main className="search-modal">
@@ -34,7 +27,7 @@ export const SearchPortal = ({
           close
         </span>
       </button>
-      <Searcher breeds={breeds} onSelectBreed={searchBreedsFromMobile} />
+      <Searcher breeds={breeds} />
     </main>,
     document.getElementById("search-portal") as HTMLElement
   );

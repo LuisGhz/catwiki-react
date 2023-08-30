@@ -2,7 +2,7 @@ import React from "react";
 import { useGetCats } from "../hooks/useGetCats";
 import "./TopCats.scss";
 
-export const TopCats = () => {
+export const RandomCats = () => {
   const { cats: randomCats } = useGetCats();
   React.useEffect(() => {
     console.log(randomCats);

@@ -4,10 +4,9 @@ import "./Searcher.scss";
 
 type SearcherProps = {
   breeds: BreedSearcher[] | undefined;
-  onSelectBreed: (breed: BreedSearcher) => void;
 };
 
-export const Searcher = ({ breeds, onSelectBreed }: SearcherProps) => {
+export const Searcher = ({ breeds }: SearcherProps) => {
   const [findedBreeds, setFindedBreeds] = React.useState<BreedSearcher[]>([]);
   const [breedsInputValue, setBreedsInputValue] = React.useState("");
   React.useEffect(() => {
@@ -46,12 +45,12 @@ export const Searcher = ({ breeds, onSelectBreed }: SearcherProps) => {
               className="searcher-results__item"
               key={breed.id}
               data-testid="result-item"
-              onClick={() => {
-                setBreedsInputValue("");
-                onSelectBreed(breed);
-              }}
             >
-              {breed.name}
+              <a
+                href={`/breed/${breed.id}`}
+              >
+                {breed.name}
+              </a>
             </li>
           ))}
         </ul>

@@ -1,20 +1,20 @@
 import React from "react";
 import { Cat } from "../models/Cat.mode";
 
-export const useGetTopCats = () => {
+export const useGetCats = () => {
   const [isLoading, setIsLoading] = React.useState(false);
-  const [topCats, setTopCats] = React.useState<Cat[]>([]);
+  const [cats, setCats] = React.useState<Cat[]>([]);
   const [error, setError] = React.useState("");
 
-  const getTopCats = async () => {
+  const getTopCats = async (order: "rand" | "asc" = "rand") => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/api");
+      const response = await fetch("http://localhost:3000/api?order=" + order);
 
       if (!response.ok) throw new Error();
 
       const data: Cat[] = await response.json();
-      setTopCats(data);
+      setCats(data);
     } catch {
       setError("Something get wrong please try again later.");
     } finally {
@@ -28,7 +28,7 @@ export const useGetTopCats = () => {
 
   return {
     isLoading,
-    topCats,
+    cats,
     error,
   };
 };

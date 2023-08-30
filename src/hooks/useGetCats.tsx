@@ -1,12 +1,12 @@
 import React from "react";
 import { Cat } from "../models/Cat.mode";
 
-export const useGetCats = () => {
+export const useGetCats = (order: "rand" | "asc" = "rand") => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [cats, setCats] = React.useState<Cat[]>([]);
   const [error, setError] = React.useState("");
 
-  const getTopCats = async (order: "rand" | "asc" = "rand") => {
+  const getTopCats = async () => {
     setIsLoading(true);
     try {
       const response = await fetch("http://localhost:3000/api?order=" + order);

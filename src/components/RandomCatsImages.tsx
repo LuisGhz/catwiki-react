@@ -1,12 +1,12 @@
 import React from "react";
-import { useGetCats } from "../hooks/useGetCats";
-import "./RandomBreeds.scss";
+import "./RandomCatsImages.scss";
+import { useGetCatsImages } from "../hooks/useGetCatsImages";
 
-export const RandomBreeds = () => {
-  const { cats: randomCats } = useGetCats();
+export const RandomCatsImages = () => {
+  const { images, getImages } = useGetCatsImages();
   React.useEffect(() => {
-    console.log(randomCats);
-  });
+    getImages("", 4);
+  }, []);
 
   return (
     <section className="random-breeds">
@@ -16,22 +16,22 @@ export const RandomBreeds = () => {
         <div className="see-more">
           <p className="see-more__desc">66+ Breeds For you to discover</p>
           <a className="see-more__link" href="/top">
-            See more 
+            See more
             <span className="material-symbols-outlined see-more__icon">
               arrow_right_alt
             </span>
           </a>
         </div>
         <section className="cats-list">
-          {randomCats.map((cat) => {
+          {images.map((cat, idx) => {
             return (
-              <picture className="cats-list__cat" key={cat.id}>
+              <picture className="cats-list__cat" key={idx}>
                 <img
                   className="cats-list__cat-img"
                   src={cat.url}
-                  alt={cat.breeds[0].name}
+                  alt={cat.name}
                 />
-                <p className="cats-list__cat-name">{cat.breeds[0].name}</p>
+                <p className="cats-list__cat-name">{cat.name}</p>
               </picture>
             );
           })}

@@ -33,3 +33,10 @@ body {
 .mistery-cat--white {
   color: #fff;
 }
+
+.hr-separator {
+  border-radius: 2rem;
+  border: 0.2rem solid black;
+  margin-inline-start: 0;
+  width: 6rem;
+}

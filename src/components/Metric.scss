@@ -1,0 +1,40 @@
+@import "../scss/ScreenBreakPoints.scss";
+
+.metric {
+  display: flex;
+  margin-block-end: 2rem;
+
+  @include w768 {
+    flex-direction: column;
+    gap: .2rem;
+    margin-block-end: 1rem;
+  }
+
+  .metric__label {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-block: 0;
+    width: 18rem;
+
+    @include w1024 {
+      width: 15rem;
+    }
+  }
+
+  .level {
+    width: 5rem;
+    display: inline-block;
+    background-color: #e0e0e0;
+    height: 1rem;
+    margin-inline-end: 1rem;
+    border-radius: 1rem;
+
+    &.level--covered {
+      background-color: #544439;
+    }
+  }
+}

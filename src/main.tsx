@@ -6,6 +6,7 @@ import "./index.css";
 import { MainCatTitle } from "./components/MainCatTitle.tsx";
 import { SearchHeader } from "./components/SearchHeader.tsx";
 import { WhyToHaveACat } from "./components/WhyToHaveACat.tsx";
+import { TopBreeds } from "./components/TopBreeds.tsx";
 
 const BrowserRouter = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const BrowserRouter = createBrowserRouter([
             <WhyToHaveACat />
           </>
         ),
+      },
+      {
+        path: "top",
+        element: <TopBreeds />,
       },
     ],
   },

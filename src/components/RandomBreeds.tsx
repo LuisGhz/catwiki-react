@@ -1,26 +1,26 @@
 import React from "react";
 import { useGetCats } from "../hooks/useGetCats";
-import "./TopCats.scss";
+import "./RandomBreeds.scss";
 
-export const TopCats = () => {
+export const RandomBreeds = () => {
   const { cats: randomCats } = useGetCats();
   React.useEffect(() => {
     console.log(randomCats);
   });
 
   return (
-    <section className="top-cats">
-      <div className="top-cats__container">
-        <h3 className="top-cats__title">Most searched Breeds</h3>
+    <section className="random-breeds">
+      <div className="random-breeds__container">
+        <h3 className="random-breeds__title">Most searched Breeds</h3>
         <hr className="hr-separator" />
         <div className="see-more">
           <p className="see-more__desc">66+ Breeds For you to discover</p>
-          <p className="see-more__link">
+          <a className="see-more__link" href="/top">
             See more 
             <span className="material-symbols-outlined see-more__icon">
               arrow_right_alt
             </span>
-          </p>
+          </a>
         </div>
         <section className="cats-list">
           {randomCats.map((cat) => {

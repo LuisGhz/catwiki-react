@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { useGetTopCats } from '../../hooks/useGetTopCats';
+import { useGetCats } from '../../hooks/useGetCats';
 
 describe('useGetCats', () => {
   test('should return a list of cats', async () => {
@@ -13,10 +13,10 @@ describe('useGetCats', () => {
         ]),
       });
     });
-    const { result } = renderHook(() => useGetTopCats());
+    const { result } = renderHook(() => useGetCats());
     
     await waitFor(() => {
-      expect(result.current.topCats).toEqual([
+      expect(result.current.cats).toEqual([
         { id: 1, name: 'Garfield' },
         { id: 2, name: 'Felix' },
         { id: 3, name: 'Tom' },
@@ -30,7 +30,7 @@ describe('useGetCats', () => {
         ok: false,
       });
     });
-    const { result } = renderHook(() => useGetTopCats());
+    const { result } = renderHook(() => useGetCats());
     
     await waitFor(() => {
       expect(result.current.error).toEqual('Something get wrong please try again later.');
@@ -41,7 +41,7 @@ describe('useGetCats', () => {
     global.fetch = vi.fn().mockImplementation(() => {
       return Promise.reject();
     });
-    const { result } = renderHook(() => useGetTopCats());
+    const { result } = renderHook(() => useGetCats());
     
     await waitFor(() => {
       expect(result.current.error).toEqual('Something get wrong please try again later.');

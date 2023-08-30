@@ -1,13 +1,13 @@
 import React from "react";
-import { useGetTopCats } from "../hooks/useGetTopCats";
+import { useGetCats } from "../hooks/useGetCats";
 import "./TopCats.scss";
 
 export const TopCats = () => {
-  const [catsLimit, setCatsLimit] = React.useState(4);
-  const { topCats } = useGetTopCats();
+  const { cats: randomCats } = useGetCats();
   React.useEffect(() => {
-    console.log(topCats);
+    console.log(randomCats);
   });
+
   return (
     <section className="top-cats">
       <div className="top-cats__container">
@@ -15,9 +15,7 @@ export const TopCats = () => {
         <hr className="hr-separator" />
         <div className="see-more">
           <p className="see-more__desc">66+ Breeds For you to discover</p>
-          <p className="see-more__link" onClick={() => {
-            setCatsLimit(10);
-          }}>
+          <p className="see-more__link">
             See more 
             <span className="material-symbols-outlined see-more__icon">
               arrow_right_alt
@@ -25,7 +23,7 @@ export const TopCats = () => {
           </p>
         </div>
         <section className="cats-list">
-          {topCats.slice(0, catsLimit).map((cat) => {
+          {randomCats.map((cat) => {
             return (
               <picture className="cats-list__cat" key={cat.id}>
                 <img

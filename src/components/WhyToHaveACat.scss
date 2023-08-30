@@ -1,3 +1,5 @@
+@import "../scss/ScreenBreakPoints.scss";
+
 .why-to {
   .why-to__hr {
     margin-block-start: 3rem;
@@ -11,6 +13,16 @@
     font-weight: 700;
     line-height: normal;
     margin-block: 0 2rem;
+  }
+
+  .why-to__flex {
+    display: flex;
+    flex-direction: row;
+    margin-block-start: 4rem;
+
+    @include w425 {
+      flex-direction: column;
+    }
   }
 
   .why-to__text {

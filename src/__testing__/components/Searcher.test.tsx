@@ -11,8 +11,7 @@ describe("Searcher", () => {
         name: "test",
       },
     ];
-    const onSelect = vi.fn();
-    render(<Searcher breeds={breeds} onSelectBreed={onSelect} />);
+    render(<Searcher breeds={breeds} />);
     expect(screen.getByRole("textbox")).toBeInTheDocument();
   });
 
@@ -31,14 +30,11 @@ describe("Searcher", () => {
         name: "three",
       },
     ];
-    const onSelect = vi.fn();
-    render(<Searcher breeds={breeds} onSelectBreed={onSelect} />);
+    render(<Searcher breeds={breeds} />);
     const input = screen.getByRole("textbox");
     await userEvent.type(input, "test");
     const results = screen.queryAllByTestId('result-item');
     expect(results).toHaveLength(2);
-    await userEvent.click(results[0]);
-    expect(onSelect).toHaveBeenCalled();
   });
 
   it("Do search without results", async () => {
@@ -56,8 +52,7 @@ describe("Searcher", () => {
         name: "three",
       },
     ];
-    const onSelect = vi.fn();
-    render(<Searcher breeds={breeds} onSelectBreed={onSelect} />);
+    render(<Searcher breeds={breeds} />);
     const input = screen.getByRole("textbox");
     await userEvent.type(input, "four");
     expect(screen.queryAllByTestId('result-item')).toHaveLength(0);
@@ -78,8 +73,7 @@ describe("Searcher", () => {
         name: "three",
       },
     ];
-    const onSelect = vi.fn();
-    render(<Searcher breeds={breeds} onSelectBreed={onSelect} />);
+    render(<Searcher breeds={breeds} />);
     const input = screen.getByRole("textbox");
     await userEvent.type(input, " ");
     expect(screen.queryAllByTestId('result-item')).toHaveLength(0);

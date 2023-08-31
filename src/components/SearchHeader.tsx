@@ -2,31 +2,25 @@ import React from "react";
 import { SearchPortal } from "./SearchPortal";
 import { useGetBreeds } from "../hooks/useGetBreeds";
 import "./SearchHeader.scss";
-import { BreedSearcher } from "../models/BreedSearcher.model";
 import { Searcher } from "./Searcher";
-import { RandomBreeds } from "./RandomBreeds";
+import { RandomCatsImages } from "./RandomCatsImages";
 
 export const SearchHeader = () => {
   const [isSearchMobileOpen, setIsSearchMobileOpen] = React.useState(false);
   const { breeds } = useGetBreeds();
-
-  const onSelectBreed = (breed: BreedSearcher) => {
-    console.log(breed);
-  };
 
   return (
     <>
       <SearchPortal
         isSearchOpen={isSearchMobileOpen}
         breeds={breeds}
-        onSelectBreed={onSelectBreed}
         setIsSearchMobileOpen={setIsSearchMobileOpen}
       />
       <header className="header">
         <h2 className="header__title">CatWiki</h2>
         <p className="header__text">Get to know more about your cat breed</p>
         <div className="search">
-          <Searcher breeds={breeds} onSelectBreed={onSelectBreed} />
+          <Searcher breeds={breeds} />
         </div>
         <div
           className="search-mobile"
@@ -38,7 +32,7 @@ export const SearchHeader = () => {
           </span>
         </div>
       </header>
-      <RandomBreeds />
+      <RandomCatsImages />
     </>
   );
 };

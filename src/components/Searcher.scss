@@ -84,6 +84,11 @@
     background: rgba(151, 151, 151, 0.1);
     border-radius: 1.2rem;
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 ::-webkit-scrollbar {

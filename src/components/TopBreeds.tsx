@@ -2,7 +2,7 @@ import "./TopBreeds.scss";
 import { useGetCats } from "../hooks/useGetCats";
 
 export const TopBreeds = () => {
-  const { cats: topBreeds } = useGetCats("asc");
+  const { cats: topBreeds } = useGetCats();
 
   return (
     <section className="top-breeds">
